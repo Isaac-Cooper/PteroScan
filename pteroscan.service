@@ -1,0 +1,14 @@
+[Unit]
+Description=PteroScan - File hash scanner for Pterodactyl servers
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/etc/pteroscan
+ExecStart=/etc/pteroscan/venv/bin/python /etc/pteroscan/pteroscan.py
+Restart=always
+RestartSec=5
+User=root
+
+[Install]
+WantedBy=multi-user.target
